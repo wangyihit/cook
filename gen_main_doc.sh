@@ -29,8 +29,7 @@ for category in ${categories}; do
     echo "# ${name}\n" > ${index_file}
     for file in ${files}; do
         title=$(basename ${file})
-        html_name=$(echo ${title} | sed 's/\.md$/.html/')
-        echo "- [${title}](${html_name})" >> ${index_file}
+        echo "- [${title}](${title})" >> ${index_file}
     done
 done
 
