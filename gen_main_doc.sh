@@ -20,6 +20,9 @@ done
 
 # create category index files
 for category in ${categories}; do
+    if [ ! -d ${category} ]; then
+        continue
+    fi
     name=$(basename ${category})
     echo "Processing category: ${category}, ${name}"
     files=$(find ${category} -name "*.md" -not -name "index.md")
